@@ -1,11 +1,11 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using DZ.Data;
 using System.Diagnostics;
-using DZ.Data.Entity;
 using System.Collections.Generic;
+using D.Data;
+using D.Data.Entity;
 
-namespace DZ.Test
+namespace D.Test
 {
     [TestClass]
     public class UnitTest1

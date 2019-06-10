@@ -5,7 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System;
 
-namespace DZ.Data
+namespace D.Data
 {
     /// <summary>
     /// DataBase Operations base on SqlSugar

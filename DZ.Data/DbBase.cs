@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DZ.Data
+namespace D.Data
 {
     public class DbBase
     {

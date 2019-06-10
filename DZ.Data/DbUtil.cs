@@ -6,7 +6,7 @@ using Dapper;
 using Dapper.Contrib.Extensions;
 using Z.Dapper.Plus;
 
-namespace DZ.Data
+namespace D.Data
 {
     /// <summary>
     /// SQL utils base on Dapper

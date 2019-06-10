@@ -57,9 +57,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DZ.Data\DZ.Data.csproj">
+    <ProjectReference Include="..\DZ.Data\D.Data.csproj">
       <Project>{02537000-6575-470e-957a-0cba33b7332e}</Project>
-      <Name>DZ.Data</Name>
+      <Name>D.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

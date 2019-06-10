@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DZ.Data
+namespace D.Data
 {
     public enum DbConfig
     {

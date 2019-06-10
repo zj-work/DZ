@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DZ.Data.Entity
+namespace D.Data.Entity
 {
     [Dapper.Contrib.Extensions.Table("tbl_log")]
     public class tbl_log
