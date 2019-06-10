@@ -38,7 +38,7 @@ namespace DZ.Data
         /// <param name="sql"></param>
         /// <param name="para"></param>
         /// <returns></returns>
-        public IEnumerable<T> Query<T>(string sql, object para)
+        public IEnumerable<T> Query<T>(string sql, object para = null)
         {
             var res = Connection.Query<T>(sql, para, commandType: CommandType.Text);
             return res;
@@ -50,7 +50,7 @@ namespace DZ.Data
         /// <param name="sql"></param>
         /// <param name="para"></param>
         /// <returns></returns>
-        public int ExecuteScalar(string sql, object para)
+        public int ExecuteScalar(string sql, object para = null)
         {
             return Connection.ExecuteScalar<int>(sql, para, commandType: CommandType.Text);
         }
@@ -61,7 +61,7 @@ namespace DZ.Data
         /// <param name="sql"></param>
         /// <param name="para"></param>
         /// <returns></returns>
-        public string ExecuteScalarString(string sql, object para)
+        public string ExecuteScalarString(string sql, object para = null)
         {
             return Connection.ExecuteScalar<string>(sql, para, commandType: CommandType.Text);
         }
@@ -84,7 +84,7 @@ namespace DZ.Data
         /// <param name="sql"></param>
         /// <param name="para"></param>
         /// <returns></returns>
-        public IEnumerable<T> QuerySP<T>(string spName, object para)
+        public IEnumerable<T> QuerySP<T>(string spName, object para = null)
         {
             return Connection.Query<T>(spName, para, commandType: CommandType.StoredProcedure);
         }
@@ -95,7 +95,7 @@ namespace DZ.Data
         /// <param name="sql"></param>
         /// <param name="para"></param>
         /// <returns></returns>
-        public int ExecuteSPScalarInt(string spName, object para)
+        public int ExecuteSPScalarInt(string spName, object para = null)
         {
             return Connection.ExecuteScalar<int>(spName, para, commandType: CommandType.StoredProcedure);
         }
@@ -106,13 +106,13 @@ namespace DZ.Data
         /// <param name="sql"></param>
         /// <param name="para"></param>
         /// <returns></returns>
-        public string ExecuteSPScalarString(string spName, object para)
+        public string ExecuteSPScalarString(string spName, object para = null)
         {
             return Connection.ExecuteScalar<string>(spName, para, commandType: CommandType.StoredProcedure);
         }
 
         /// <summary>
-        /// 插入数据
+        /// 插入数据 并返回自动增长的标示性信息
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="entity"></param>
@@ -162,7 +162,7 @@ namespace DZ.Data
         public int InsertRange<T>(IEnumerable<T> entities)
         {
             var res = Connection.BulkInsert<T>(entities.ToArray());
-            return res.Actions.Count;
+            return res.Current.Count();
         }
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace DZ.Data
         public int DeleteRange<T>(IEnumerable<T> entities)
         {
             var res = Connection.BulkDelete<T>(entities);
-            return res.Actions.Count;
+            return res.Current.Count();
         }
 
     }

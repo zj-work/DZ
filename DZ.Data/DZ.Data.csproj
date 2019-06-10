@@ -59,10 +59,14 @@
     <Compile Include="DbConfig.cs" />
     <Compile Include="DbContext.cs" />
     <Compile Include="DbUtil.cs" />
+    <Compile Include="Entity\tbl_log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -17,10 +17,20 @@ namespace DZ.Data
         /// <param name="dbProvideName"></param>
         protected IDbConnection GetDbConnection(DbConfig dbConfig)
         {
+            var _dbConnection = new SqlConnection(GetDbConnectionString(dbConfig));
+            return _dbConnection;
+        }
+
+        /// <summary>
+        /// 获取数据库连接字符串
+        /// </summary>
+        /// <param name="dbConfig"></param>
+        /// <returns></returns>
+        protected string GetDbConnectionString(DbConfig dbConfig)
+        {
             var dbStringName = ConfigurationManager.AppSettings[dbConfig.ToString()];
             var dbString = ConfigurationManager.ConnectionStrings[dbStringName].ConnectionString;
-            var _dbConnection = new SqlConnection(dbString);
-            return _dbConnection;
+            return dbString;
         }
     }
 }
