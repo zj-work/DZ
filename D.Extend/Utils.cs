@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
+using System.Xml;
+using System.IO;
+using System.Xml.Serialization;
+using System.Reflection;
 
 namespace D.Extend
 {
@@ -36,6 +41,7 @@ namespace D.Extend
             }
             return s;
         }
+
         /// <summary>
         /// 判断字符串与密文是否一致
         /// </summary>
@@ -46,6 +52,73 @@ namespace D.Extend
         {
             var text = _encrypt.MD5Encrypt(data);
             return text.Equals(verifyData);
+        }
+
+        /// <summary>
+        /// 获取客户端IP地址（无视代理）
+        /// </summary>
+        /// <returns>若失败则返回回送地址</returns>
+        public static string GetHostAddress()
+        {
+            string userHostAddress = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
+            if (string.IsNullOrEmpty(userHostAddress))
+            {
+                if (System.Web.HttpContext.Current.Request.ServerVariables["HTTP_VIA"] != null)
+                    userHostAddress = HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"].ToString().Split(',')[0].Trim();
+            }
+            if (string.IsNullOrEmpty(userHostAddress))
+            {
+                userHostAddress = HttpContext.Current.Request.UserHostAddress;
+            }
+
+            //最后判断获取是否成功，并检查IP地址的格式（检查其格式非常重要）
+            if (!string.IsNullOrEmpty(userHostAddress) && IsIP(userHostAddress))
+            {
+                return userHostAddress;
+            }
+            return "0.0.0.0";
+        }
+
+        /// <summary>
+        /// 检查IP地址格式
+        /// </summary>
+        /// <param name="ip"></param>
+        /// <returns></returns>
+        public static bool IsIPAddress(string ip)
+        {
+            return System.Text.RegularExpressions.Regex.IsMatch(ip, @"^((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)$");
+        }
+
+        /// <summary> 
+        /// 获取时间戳 
+        /// </summary> 
+        /// <returns></returns> 
+        public static string GetTimeStamp()
+        {
+            TimeSpan ts = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            return Convert.ToInt64(ts.TotalSeconds).ToString();
+        }
+        /// <summary>        
+        /// 时间戳转为C#格式时间        
+        /// </summary>        
+        /// <param name=”timeStamp”></param>        
+        /// <returns></returns>        
+        private static DateTime ConvertStringToDateTime(string timeStamp)
+        {
+            DateTime dtStart = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
+            long lTime = long.Parse(timeStamp + "0000");
+            TimeSpan toNow = new TimeSpan(lTime);
+            return dtStart.Add(toNow);
+        }
+        /// <summary>
+        /// 计算时间戳的差值
+        /// </summary>
+        /// <param name="timestamp"></param>
+        /// <param name="dt"></param>
+        public static double GetTimeDiff(string timestamp,DateTime dt)
+        {
+            DateTime last = ConvertStringToDateTime(timestamp);
+            return (dt - last).TotalSeconds;
         }
     }
 }

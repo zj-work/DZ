@@ -10,7 +10,10 @@ namespace D.Data.Entity
     public class tbl_log
     {
         public int id { get; set; }
+        public string type { get; set; }
         public string content { get; set; }
-        public string flag { get; set; }
+        public DateTime createtime { get; set; }
+        public string ip { get; set; }
+        public string remarks { get; set; }
     }
 }
