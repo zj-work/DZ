@@ -72,7 +72,7 @@ namespace D.Extend
             }
 
             //最后判断获取是否成功，并检查IP地址的格式（检查其格式非常重要）
-            if (!string.IsNullOrEmpty(userHostAddress) && IsIP(userHostAddress))
+            if (!string.IsNullOrEmpty(userHostAddress) && IsIPAddress(userHostAddress))
             {
                 return userHostAddress;
             }
