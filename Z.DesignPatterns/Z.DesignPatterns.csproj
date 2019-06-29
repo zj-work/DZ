@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="创建型模式\建造者模式\" />
+    <Folder Include="创建型模式\原型模式\" />
+    <Folder Include="J2EE模式\" />
+    <Folder Include="行为型模式\" />
+    <Folder Include="结构型模式\" />
+  </ItemGroup>
+
+</Project>
