@@ -15,12 +15,7 @@ namespace D.Test
         [TestMethod]
         public void TestMethod1()
         {
-            var res = dbContext.Add(new tbl_log()
-            {
-                content = "测试DbContext插入数据01",
-                flag = "Info"
-            });
-            Debug.WriteLine("测试结果：" + res);
+           
         }
     }
 }
