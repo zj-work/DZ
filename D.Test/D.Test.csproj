@@ -57,7 +57,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DZ.Data\D.Data.csproj">
+    <ProjectReference Include="..\D.Data\D.Data.csproj">
       <Project>{02537000-6575-470e-957a-0cba33b7332e}</Project>
       <Name>D.Data</Name>
     </ProjectReference>

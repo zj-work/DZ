@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D.Data", "DZ.Data\D.Data.csproj", "{02537000-6575-470E-957A-0CBA33B7332E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D.Data", "D.Data\D.Data.csproj", "{02537000-6575-470E-957A-0CBA33B7332E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D.Test", "DZ.Test\D.Test.csproj", "{3A8D9CD2-C187-4FD1-BD24-B7E12BB03F02}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D.Test", "D.Test\D.Test.csproj", "{3A8D9CD2-C187-4FD1-BD24-B7E12BB03F02}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D.Extend", "D.Extend\D.Extend.csproj", "{22A4F79B-A872-4770-AE92-376565E9E387}"
 EndProject
