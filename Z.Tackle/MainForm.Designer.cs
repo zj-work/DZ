@@ -34,6 +34,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -43,7 +44,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.fl_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -53,7 +53,7 @@
             // 
             // fl_top
             // 
-            this.fl_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.fl_top.BackColor = System.Drawing.Color.DodgerBlue;
             this.fl_top.Controls.Add(this.pictureBox1);
             this.fl_top.Controls.Add(this.label1);
             this.fl_top.Dock = System.Windows.Forms.DockStyle.Top;
@@ -103,6 +103,15 @@
             this.panel1.Size = new System.Drawing.Size(290, 183);
             this.panel1.TabIndex = 1;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.progressBar1.Location = new System.Drawing.Point(0, 160);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(290, 23);
+            this.progressBar1.TabIndex = 4;
+            this.progressBar1.Visible = false;
+            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(197, 123);
@@ -147,9 +156,7 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            ".bmp",
-            ".jpg",
-            ".png"});
+            ".bmp"});
             this.comboBox1.Location = new System.Drawing.Point(122, 21);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(114, 20);
@@ -185,15 +192,6 @@
             this.textBox1.Size = new System.Drawing.Size(233, 21);
             this.textBox1.TabIndex = 0;
             this.textBox1.Click += new System.EventHandler(this.Select_Click);
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBar1.Location = new System.Drawing.Point(0, 160);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(290, 23);
-            this.progressBar1.TabIndex = 4;
-            this.progressBar1.Visible = false;
             // 
             // MainForm
             // 

@@ -127,14 +127,14 @@ namespace Z.Tackle
             List<FileInfo> files = new List<FileInfo>();//选择文件夹以及所有子文件夹下的文件
             Queue<string> queue = new Queue<string>();
             queue.Enqueue(this._folder);
-            while(queue.Count > 0)
+            while (queue.Count > 0)
             {
                 var currentfolder = queue.Dequeue();
                 DirectoryInfo dir = new DirectoryInfo(currentfolder);
                 //添加当前文件夹下的图片文件
                 files.AddRange(dir.GetFiles());
                 //添加当前文件夹下的子文件夹
-                foreach(var item in dir.GetDirectories())
+                foreach (var item in dir.GetDirectories())
                 {
                     queue.Enqueue(item.FullName);
                 }
@@ -153,9 +153,15 @@ namespace Z.Tackle
                         {//将不是指定格式的文件转换为指定格式的文件
                             var newFilePath = filePath.Replace(extend, this._extend);
                             Bitmap bmp = new Bitmap(filePath);
-                            bmp.Save(newFilePath);
+                            bmp.Save(newFilePath, System.Drawing.Imaging.ImageFormat.Bmp);
+                            bmp.Dispose();
+                            //删除原有的tiff格式的数据
+                            File.Delete(filePath);
                         }
-                        progressBar1.Value += 1;
+                        this.Invoke(new Action(() =>
+                        {
+                            progressBar1.Value += 1;
+                        }));
                     }
                     catch { }
                 }, file.FullName, System.Threading.CancellationToken.None));
@@ -173,7 +179,7 @@ namespace Z.Tackle
             {
                 ".bmp",".tiff",".jpg",".png"
             };
-            return imageExtension.Contains(extension);
+            return imageExtension.Contains(extension.ToLower());
         }
 
         #endregion
