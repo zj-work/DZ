@@ -177,7 +177,7 @@ namespace Z.Tackle
         {
             var imageExtension = new string[]
             {
-                ".bmp",".tiff",".jpg",".png"
+                ".tiff"
             };
             return imageExtension.Contains(extension.ToLower());
         }
