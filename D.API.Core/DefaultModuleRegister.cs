@@ -16,7 +16,7 @@ namespace D.API.Core
             //注册当前程序集中以"Service"结尾的类，暴露其实现的接口，生命周期为PerLifetimeScope
             builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly()).Where(s=>s.Name.EndsWith("Service")).AsImplementedInterfaces().PropertiesAutowired().InstancePerLifetimeScope();
             builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly()).Where(s => s.Name.EndsWith("Controller")).PropertiesAutowired();
-
+            builder.RegisterAssemblyTypes(GetAssembly("D.Service.Core")).Where(s => s.Name.EndsWith("Service")).AsImplementedInterfaces().PropertiesAutowired().InstancePerLifetimeScope();
             //builder.RegisterTypes(Assembly.GetExecutingAssembly().GetExportedTypes().Where(s => typeof(ControllerBase).IsAssignableFrom(s)).ToArray()).PropertiesAutowired();
 
             //base.Load(builder);

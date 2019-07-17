@@ -10,14 +10,11 @@ namespace D.API.Core.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        public Interface.IValuesService ValuesService { private get; set; }
-
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<string> Get()
         {
-            //return new string[] { "value1", "value2" };
-            return this.ValuesService.GetNames().ToArray();
+            return string.Empty;
         }
 
         // GET api/values/5
