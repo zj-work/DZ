@@ -190,7 +190,7 @@
       <Project>{22a4f79b-a872-4770-ae92-376565e9e387}</Project>
       <Name>D.Extend</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DZ.Data\D.Data.csproj">
+    <ProjectReference Include="..\D.Data\D.Data.csproj">
       <Project>{02537000-6575-470e-957a-0cba33b7332e}</Project>
       <Name>D.Data</Name>
     </ProjectReference>

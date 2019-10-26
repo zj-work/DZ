@@ -61,6 +61,10 @@
       <Project>{02537000-6575-470e-957a-0cba33b7332e}</Project>
       <Name>D.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\D.Extend\D.Extend.csproj">
+      <Project>{22a4f79b-a872-4770-ae92-376565e9e387}</Project>
+      <Name>D.Extend</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

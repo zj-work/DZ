@@ -98,6 +98,7 @@ namespace D.Extend
             TimeSpan ts = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0);
             return Convert.ToInt64(ts.TotalSeconds).ToString();
         }
+
         /// <summary>        
         /// 时间戳转为C#格式时间        
         /// </summary>        
@@ -110,6 +111,7 @@ namespace D.Extend
             TimeSpan toNow = new TimeSpan(lTime);
             return dtStart.Add(toNow);
         }
+
         /// <summary>
         /// 计算时间戳的差值
         /// </summary>
