@@ -56,7 +56,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbBase.cs" />
-    <Compile Include="DbConfig.cs" />
     <Compile Include="DbContext.cs" />
     <Compile Include="DbUtil.cs" />
     <Compile Include="Entity\tbl_log.cs" />

@@ -9,28 +9,27 @@ using System.Threading.Tasks;
 
 namespace D.Data
 {
-    public class DbBase
+    public abstract class DbBase
     {
         /// <summary>
         /// 注册数据库连接
         /// </summary>
-        /// <param name="dbProvideName"></param>
-        protected IDbConnection GetDbConnection(DbConfig dbConfig)
+        /// <param name="connName"></param>
+        /// <returns></returns>
+        protected IDbConnection GetDbConnection(string connName)
         {
-            var _dbConnection = new SqlConnection(GetDbConnectionString(dbConfig));
-            return _dbConnection;
+            var connString = ConfigurationManager.ConnectionStrings[connName].ConnectionString;
+            return new SqlConnection(connString);
         }
 
         /// <summary>
-        /// 获取数据库连接字符串
+        /// 注册数据库连接
         /// </summary>
-        /// <param name="dbConfig"></param>
+        /// <param name="connName"></param>
         /// <returns></returns>
-        protected string GetDbConnectionString(DbConfig dbConfig)
+        protected string GetDbConnectionString(string connName)
         {
-            var dbStringName = ConfigurationManager.AppSettings[dbConfig.ToString()];
-            var dbString = ConfigurationManager.ConnectionStrings[dbStringName].ConnectionString;
-            return dbString;
+            return ConfigurationManager.ConnectionStrings[connName].ConnectionString;
         }
     }
 }

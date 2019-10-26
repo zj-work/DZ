@@ -15,11 +15,11 @@ namespace D.Data
     {
         private SqlSugarClient Db;
         private SimpleClient<T> currentDb;
-        public DbContext(DbConfig dbConfig = DbConfig.DbMain)
+        public DbContext(string connName)
         {
             Db = new SqlSugarClient(new ConnectionConfig()
             {
-                ConnectionString = GetDbConnectionString(dbConfig),
+                ConnectionString = GetDbConnectionString(connName),
                 DbType = SqlSugar.DbType.SqlServer,
                 IsAutoCloseConnection = true
             });

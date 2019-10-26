@@ -14,9 +14,9 @@ namespace D.Data
     public class DbUtil : DbBase
     {
         private IDbConnection Connection = null;
-        public DbUtil(DbConfig dbConfig = DbConfig.DbMain)
+        public DbUtil(string connName)
         {
-            Connection = GetDbConnection(dbConfig);
+            Connection = GetDbConnection(connName);
         }
 
         /// <summary>
