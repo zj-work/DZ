@@ -1,13 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="J2EE模式\" />
-    <Folder Include="行为型模式\" />
-    <Folder Include="结构型模式\" />
+    <ProjectReference Include="..\Z.DesignPatterns\Z.DesignPatterns.csproj" />
   </ItemGroup>
 
 </Project>
