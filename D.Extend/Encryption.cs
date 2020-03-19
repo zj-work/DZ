@@ -198,7 +198,7 @@ namespace D.Extend
         /// <param name="key">密钥</param>  
         /// <param name="iv">向量</param>  
         /// <returns>加密后的字符串</returns>  
-        public static string DESEncrypt(string originalValue, string key, string iv)
+        public string DESEncrypt(string originalValue, string key, string iv)
         {
             using (DESCryptoServiceProvider sa
                 = new DESCryptoServiceProvider { Key = Encoding.UTF8.GetBytes(key), IV = Encoding.UTF8.GetBytes(iv) })
